@@ -40,6 +40,23 @@ char *opcode;
 void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct tray_s - It hold variables such file, linecontent, argument
+ * @argument: Value on command line
+ * @file: File pointer to monty file
+ * @content: pointer to line content
+ * @ff: flag change stack <-> queue (stack or queue)
+ * Description: It conatains the value through the program
+ */
+typedef struct tray_s
+{
+	char *argument;
+	FILE *file;
+	char *content;
+	int ff;
+}  tray_t;
+extern tray_t tray;
+
 void _add_queue(stack_t **head, unsigned int value);
 void queue_func(stack_t **head, unsigned int value);
 void pall_func(stack_t **head, unsigned int l_number);
