@@ -7,7 +7,7 @@
  * Return: no value
  */
 
-void _add_queue(stack_t **head, unsigned int value)
+void _add_queue(stack_t **head, int value)
 {
 	stack_t *newnode, *temp;
 

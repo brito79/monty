@@ -1,4 +1,4 @@
-#include "monty.temp"
+#include "monty.h"
 /**
  * add_func - Adding the top two elements of the stack.
  * @head: The head of the stack

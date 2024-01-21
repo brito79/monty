@@ -10,5 +10,5 @@ void queue_func(stack_t **head, unsigned int value)
 {
 	(void)value;
 	(void)head;
-	tray.ff = 1;
+	tray.lf = 1;
 }

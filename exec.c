@@ -1,4 +1,7 @@
-#include "monty"
+#include "monty.h"
+
+int exec_func(char *content, stack_t **stack, unsigned int l_number, FILE *file);
+
 /**
  * exec_func -  The function that executes pcode
  * @content: The variable that points to line under execution
@@ -9,14 +12,26 @@
  * Return: No Value
  */
 
-int exec_func(char *content, stact_t **stack, unsigned int l_number, FILE *file)
+int exec_func(char *content, stack_t **stack,
+		unsigned int l_number, FILE *file)
 {
-	instruction_t arr_ops[] = {{"push", push_func}, {"pall", pall_func},
+	instruction_t arr_ops[] = {{"push", push_func}
+		, {"pall", pall_func},
 		{"pint", pint_func}
 		, {"pop", pop_func}
 		, {"swap", swap_func}
 		, {"add", add_func}
 		, {"nop", nop_func}
+		, {"sub", sub_func}
+		, {"div", div_func}
+		, {"mul", mul_func}
+		, {"mod", mod_func}
+		, {"pchar", pchar_func}
+		, {"pstr", pstr_func}
+		, {"rotl", rotl_func}
+		, {"rotr", rotr_func}
+		, {"queue", queue_func}
+		, {"stack", stack_func}
 		, {NULL, NULL}};
 
 	char *opr;

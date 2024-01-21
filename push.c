@@ -13,7 +13,7 @@ void push_func(stack_t **head, unsigned int l_number);
 void push_func(stack_t **head, unsigned int l_number)
 {
 int value;
-int i;
+int i = 0;
 int fflag = 0;
 
 if (tray.argument)
@@ -35,7 +35,7 @@ if (fflag == 1)
 fprintf(stderr, "L%d : usage: push integer\n", l_number);
 fclose(tray.file);
 free(tray.content);
-stuck_free_func(*head);
+stack_free_func(*head);
 exit(EXIT_FAILURE);
 }
 }
@@ -44,11 +44,11 @@ else
 fprintf(stderr, "L %d : usage: push integer\n", l_number);
 fclose(tray.file);
 free(tray.content);
-stuck_free_func(*head);
+stack_free_func(*head);
 exit(EXIT_FAILURE);
 }
 value = atoi(tray.argument);
-if (tray.ff == 0)
+if (tray.lf == 0)
 {
 _add_node(head, value);
 }

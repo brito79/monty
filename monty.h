@@ -4,11 +4,12 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <ctype.h>
-#include <fnctl.h>
+#include <fcntl.h>
 #include <stdio.h>
 #include <sys/types.h>
 #include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
 * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -53,19 +54,33 @@ typedef struct tray_s
 	char *argument;
 	FILE *file;
 	char *content;
-	int ff;
+	int lf;
 }  tray_t;
 extern tray_t tray;
 
-void _add_queue(stack_t **head, unsigned int value);
-void queue_func(stack_t **head, unsigned int value);
+void _add_node(stack_t **head, int n);
+void queue_func(stack_t **head, unsigned int l_number);
 void pall_func(stack_t **head, unsigned int l_number);
 void pint_func(stack_t **head, unsigned int l_number);
 void push_func(stack_t **head, unsigned int l_number);
-void stack_free_func(stact_t *head);
+void stack_free_func(stack_t *head);
 void pop_func(stack_t **head, unsigned int l_number);
 void swap_func(stack_t **head, unsigned int l_number);
 void nop_func(stack_t **head, unsigned int l_number);
 void add_func(stack_t **head, unsigned int l_number);
+void rotl_func(stack_t **head,  __attribute__((unused)) unsigned int l_number);
+void stack_func(stack_t **head, unsigned int l_number);
+void pchar_func(stack_t **head, unsigned int l_number);
+void _add_queue(stack_t **head, int value);
+int exec_func(char *content, stack_t **stack, unsigned int l_number, FILE *file);
+void pstr_func(stack_t **head, unsigned int l_number);
+void rotr_func(stack_t **head, __attribute__((unused)) unsigned int l_number);
+void queue_func(stack_t **head, unsigned int l_number);
+void stack_func(stack_t **head, unsigned int l_number);
+void add_func(stack_t **head, unsigned int l_number);
+void mul_func(stack_t **head, unsigned int l_number);
+void sub_func(stack_t **head, unsigned int l_number);
+void mod_func(stack_t **head, unsigned int l_number);
+void div_func(stack_t **head, unsigned int l_number);
 
 #endif
